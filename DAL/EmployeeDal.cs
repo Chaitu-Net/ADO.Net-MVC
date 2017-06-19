@@ -244,6 +244,40 @@ namespace DAL
 
         }
 
+
+        public static Object UserExistance(Employee emp1)
+        {
+            Object obj = new Object();
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                conn.Open();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SPSelectEmployeeename", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ename", emp1.Name);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Employee emp = new Employee();
+                        emp.ID = dr["eid"] == DBNull.Value ? 0 : Convert.ToInt32(dr["eid"]);
+                        emp.Name = dr["ename"].ToString();
+                        emp.Age = dr["age"] == DBNull.Value ? 0 : Convert.ToInt32(dr["age"]);
+                        emp.Salary = dr["salary"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["salary"]);
+                        emp.Did = dr["did"] == DBNull.Value ? 0 : Convert.ToInt32(dr["did"]);
+                        emp.DOJ = dr["doj"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(dr["doj"]);
+                        obj = emp;
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+                conn.Close();
+            }
+            return obj;
+        }
+
         public static void DeleteUser(Employee emp)
         {
             using (SqlConnection conn = new SqlConnection(dbConnection))
