@@ -1,0 +1,28 @@
+﻿@model System.Data.DataTable
+
+@using System.Data
+    
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="form-group">
+    @foreach (DataColumn col in Model.Columns)
+    {
+        <div class="col-md-2"><h4>@col.ColumnName</h4></div>
+    }
+</div>
+
+
+
+@foreach (DataRow row in Model.Rows)
+{
+    <div class="form-group">
+        @foreach (DataColumn col in Model.Columns)
+        {
+            <div class="col-md-2">@row[col.ColumnName]</div>
+        }
+    </div>
+}

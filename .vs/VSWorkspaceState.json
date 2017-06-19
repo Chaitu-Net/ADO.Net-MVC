@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MVC",
+    "\\MVC\\Controllers"
   ],
+  "SelectedNode": "\\ASPWebApplication.sln",
   "PreviewInSolutionExplorer": false
 }

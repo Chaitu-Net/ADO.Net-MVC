@@ -1,0 +1,84 @@
+﻿@model BO.empBO
+
+@{
+    ViewBag.Title = "MultipleReader";
+}
+
+<h1>MultipleReader</h1>
+
+<h2>Employee Details</h2>
+
+<div class="row">
+    <div class="col-xs-3">
+        <label>ID</label>
+    </div>
+    <div class="col-xs-3">
+        <label>Name</label>
+    </div>
+    <div class="col-xs-3">
+        <label>Age</label>
+    </div>
+    <div class="col-xs-3">
+        <label>Salary</label>
+    </div>
+    <div class="col-xs-3">
+        <label>Did</label>
+    </div>
+    <div class="col-xs-3">
+        <label>DOJ</label>
+    </div>
+</div>
+@foreach (var item in Model.emp)
+{
+    <div class="row">
+        <div class="col-xs-3">
+            @item.ID
+        </div>
+        <div class="col-xs-3">
+            @item.Name
+        </div>
+        <div class="col-xs-3">
+            @item.Age
+        </div>
+        <div class="col-xs-3">
+            @item.Salary
+        </div>
+        <div class="col-xs-3">
+            @item.Did
+        </div>
+        <div class="col-xs-3">
+            @item.DOJ
+        </div>
+    </div>
+}
+<br />
+<br />
+
+<h2>Department Details</h2>
+
+<div class="row">
+    <div class="col-xs-3">
+        <label>DID</label>
+    </div>
+    <div class="col-xs-3">
+        <label>DName</label>
+    </div>
+    <div class="col-xs-3">
+        <label>Desg</label>
+    </div>
+</div>
+@foreach (var item in Model.dept)
+{
+    <div class="row">
+        <div class="col-xs-3">
+            @item.Did
+        </div>
+        <div class="col-xs-3">
+            @item.Dname
+        </div>
+        <div class="col-xs-3">
+            @item.Ddesg
+        </div>
+    </div>
+}
+
