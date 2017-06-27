@@ -1,0 +1,28 @@
+﻿@model System.Data.DataTable
+@using System.Data
+
+
+@{
+    ViewBag.Title = "DataAdapter";
+}
+
+<h2>DataAdapter</h2>
+
+<div class="row">
+    @foreach (DataColumn col in Model.Columns)
+    {
+        <div class="col-xs-3">@col.ColumnName</div>
+    }
+</div>
+
+
+
+@foreach (DataRow row in Model.Rows)
+{
+    <div class="row">
+        @foreach (DataColumn col in Model.Columns)
+        {
+            <div class="col-xs-3">@row[col.ColumnName]</div>
+        }
+    </div>
+}

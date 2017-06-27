@@ -1,0 +1,154 @@
+﻿@model BO.Employee
+
+@{
+    ViewBag.Title = "User Existance";
+}
+
+<h2>User Existance</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+
+        <div>
+            <h4>Employee Record</h4>
+            <hr />
+            <h3>@ViewBag.Message</h3>
+            <dl class=" dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Age)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Age)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Salary)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Did)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Did)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOJ)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DOJ)
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+
+
+
+@*@model MVC.Models.EmpViewModel
+
+@{
+    ViewBag.Title = "UserExistance";
+}
+
+<h2>UserExistance</h2>
+
+@using (Html.BeginForm("UserExistance","EmpCRUD",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>FindName</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>User Name:</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" id="UserName" name="UserName" value="" />
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+
+        <div>
+            <h4>Employee Record</h4>
+            <hr />
+            <dl class=" dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Age)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Age)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Salary)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Did)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Did)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOJ)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DOJ)
+                </dd>
+            </dl>
+        </div>
+    </div>
+}*@
