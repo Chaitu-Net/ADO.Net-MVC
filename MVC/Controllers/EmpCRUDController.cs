@@ -187,7 +187,6 @@ namespace MVC.Controllers
         [HttpPost]
         public ActionResult CustomTable(int id)
         {
-
             return View();
         }
 

@@ -109,7 +109,6 @@ namespace DAL
 
         public static DataTable DisplayEmployeeUsingDataAdapter()
         {
-
             using (SqlConnection conn = new SqlConnection(dbConnection))
             {
                 conn.Open();

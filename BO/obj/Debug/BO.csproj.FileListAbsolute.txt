@@ -2,3 +2,4 @@ C:\Users\Chaitu\documents\visual studio 2017\Projects\ASPWebApplication\BO\bin\D
 C:\Users\Chaitu\documents\visual studio 2017\Projects\ASPWebApplication\BO\bin\Debug\BO.pdb
 C:\Users\Chaitu\documents\visual studio 2017\Projects\ASPWebApplication\BO\obj\Debug\BO.dll
 C:\Users\Chaitu\documents\visual studio 2017\Projects\ASPWebApplication\BO\obj\Debug\BO.pdb
+C:\Users\Chaitu\documents\visual studio 2017\Projects\ASPWebApplication\BO\obj\Debug\BO.csprojResolveAssemblyReference.cache
